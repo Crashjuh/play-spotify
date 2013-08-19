@@ -1,0 +1,24 @@
+{
+  "name": "play-spotify",
+  "version": "0.0.0",
+  "description": "Type in a song title and it will play in Spotify app.",
+  "main": "app.js",
+  "dependencies": {
+    "spotify-node-applescript": "~0.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michaelcpuckett/play-spotify.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "401b357906d5e2d0282bbf1bec637b11485798a8",
+  "bugs": {
+    "url": "https://github.com/michaelcpuckett/play-spotify/issues"
+  }
+}
