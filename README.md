@@ -1,5 +1,5 @@
 # bash profile
-alias play='node ~/sites/play-spotify/app.js play'
+alias play='node [path/to]/app.js play'
 
 # usage
-* play call me maybe
+* `play call me maybe`
