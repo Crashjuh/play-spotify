@@ -13,7 +13,11 @@ function getSong(query, callback) {
             searchData += chunk;
         }).on('end', function () {
             searchData = JSON.parse(searchData);
-            callback(null, searchData.tracks[0].href);
+            if (Array.isArray(searchData.tracks)) {
+                callback(null, searchData.tracks[0].href);
+            } else {
+                console.log('No results, sucker.');
+            }
         });
     }).on('error', function (e) {
         console.log("Got error: " + e.message);
@@ -22,7 +26,7 @@ function getSong(query, callback) {
 }
 
 if (process.argv[2] === 'play' && process.argv[3] && process.argv[3].length > 0) {
-    var query = process.argv.splice(3).join('+');
+    var query = process.argv.splice(3).join('+').toLowerCase();
     getSong(query, function (error, songUri) {
         spotify.playTrack(songUri);
     });
