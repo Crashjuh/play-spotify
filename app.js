@@ -13,7 +13,15 @@ function getSong(query, callback) {
             searchData += chunk;
         }).on('end', function () {
             searchData = JSON.parse(searchData);
+
             if (Array.isArray(searchData.tracks)) {
+                var artists = '';
+                for (var i = 0; i < searchData.tracks[0].artists.length; i += 1) {
+                    artists += searchData.tracks[0].artists[i].name + ', ';
+                }
+                artists = artists.substr(0, artists.length - 2);
+                console.log('Playing: ' + artists + ' - ' + searchData.tracks[0].name);
+
                 callback(null, searchData.tracks[0].href);
             } else {
                 console.log('No results, sucker.');
