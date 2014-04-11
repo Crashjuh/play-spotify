@@ -4,7 +4,8 @@
   "description": "Type in a song title and it will play in Spotify app.",
   "main": "app.js",
   "dependencies": {
-    "spotify-node-applescript": "~0.2.1"
+    "spotify-node-applescript": "~0.2.1",
+    "es6-promise": "^0.1.1"
   },
   "devDependencies": {},
   "scripts": {
